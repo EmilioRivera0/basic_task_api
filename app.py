@@ -1,5 +1,5 @@
 """-----------------------------------------------------------------------------------------------------------------------------------
-- Software Name: Student Hour Tracker
+- Software Name: Task Manager API
 - Language: Python
 - Developer: Emilio Rivera Macías
 - Date: March 10, 2023
