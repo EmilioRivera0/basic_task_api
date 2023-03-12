@@ -40,7 +40,7 @@ def get_specific_task(id):
     return abort(404)
 
 #post method to append a task to tasks data structure
-@app.route((URI + 'tasks'), methods=['POST'])
+@app.route((URI + 'append'), methods=['POST'])
 def append_task():
     """ append to tasks the specified task through the received HTTP packet """
     #initialize the necessary variables with its respective value from the variables from the HTTP packet
