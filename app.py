@@ -44,11 +44,10 @@ def get_specific_task(id):
 def append_task():
     """ append to tasks the specified task through the received HTTP packet """
     #initialize the necessary variables with its respective value from the variables from the HTTP packet
-    post_id = request.form.get('id')
     post_name = request.form.get('name')
     post_estado = request.form.get('estado')
     #append the task
-    tasks.append({'id':int(post_id),'name':post_name,'estado':bool(post_estado)})
+    tasks.append({'id':(len(tasks) + 1),'name':post_name,'estado':bool(post_estado)})
     #return tasks
     return jsonify({'tasks':tasks})
 
