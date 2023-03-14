@@ -68,16 +68,13 @@ def delete_task(delete_id):
 @app.route((URI + 'update'), methods=['PUT'])
 def update_task():
     """ update the specified task with the values of the HTTP packet data """
-    #initialize the necessary variables with its respective value from the variables from the HTTP packet
-    put_id = request.form.get('id')
-    put_name = request.form.get('name')
-    put_estado = request.form.get('estado')
+    #initialize the id variable with the received value in the HTTP packet
+    put_id = int(request.form.get('id'))
     #iterate through tasks looking for the indicated task to be updated
     for it in tasks:
         #if found, update the task and return tasks as json
-        if it['id'] == int(put_id):
-            it['name'] = put_name
-            it['estado'] = bool(put_estado)
+        if it['id'] == put_id:
+            it['estado'] = True
             return jsonify({'tasks':tasks})
     #if task does not exists, generate 404 HTTP error code
     return abort(404)
