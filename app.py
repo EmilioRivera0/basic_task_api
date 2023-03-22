@@ -45,6 +45,9 @@ def append_task():
     """ append to tasks the specified task through the received HTTP packet """
     #initialize the necessary variables with its respective value from the variables from the HTTP packet
     post_name = request.form.get('name')
+    #check if post_name value is not null
+    if post_name == "":
+        return jsonify({'tasks':tasks})
     #append the task
     tasks.append({'id':(len(tasks) + 1),'name':post_name,'estado':False})
     #return tasks
